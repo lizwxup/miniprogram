@@ -1,0 +1,71 @@
+.userinfo-avatar{
+  /*border-radius:50%;*/
+  width:80px;
+  height:80px;
+  border:3px solid #f5f5f5;
+}
+page{
+  background:#f5f5f5;
+}
+.container{
+  display: flex;
+  width:90%;
+  justify-content: space-between;
+ /* align-items: center;*/
+  background:#fff;
+  padding:5px 5% 5px 5%;
+  margin-top:10px;
+}
+.container-user{
+  display: flex;
+  justify-content: space-between;
+}
+.edit-msg{
+  line-height:86px;
+}
+.userinfo-msg{
+  width:86px;
+  height:86px;
+}
+.msg{
+  margin-left:20px;
+}
+.bind_phone{
+  line-height: 70px;
+  padding-left:20px;
+}
+.bind-go{
+  float:right;
+  margin-right:30px;
+  color:#bebebe;
+}
+.userinfo-detail{
+  margin-top:10px;
+}
+.userinfo-nickname{
+  margin-top:8px;
+}
+.order-all{
+  display:flex;
+  justify-content: space-around;
+}
+.order-all .order-each{
+  background:#fff;
+  width:35%;
+  margin-top:20px;
+  padding:3px 15px;
+  border-radius:10px;
+}
+.order-each view{
+  line-height:28px;
+}
+.order-all .order-each text{
+   float:right;
+}
+.distributeDetil{
+  width:80%;
+  border-radius:10px;
+  margin-top:30px;
+  height:80rpx;
+  line-height:80rpx;
+}

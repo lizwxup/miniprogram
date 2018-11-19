@@ -1,0 +1,28 @@
+<!--pages/orderTime/orderTime.wxml-->
+<view class="">
+    <view class="time-title font-16 bg-fff">{{equipName}}预约时间</view> 
+    <view class="font-14 time-date " >
+      <scroll-view  scroll-x style="width:auto;overflow:hidden；box-shadow:1px 1px 1px #ddd" class="bg-fff">
+        <view   wx:for="{{equipTimePlanList}}"  wx:for-index="idx" wx:key="item" 
+          class="time-dec {{num==idx?'cur':''}}" data-id="{{idx}}"  bindtap="bindOrderTime">
+          <view>星期 <text wx:if="{{item.dayOfWeek === 1}}">日</text>
+                     <text wx:elif="{{item.dayOfWeek === 2}}">一</text>
+                     <text wx:elif="{{item.dayOfWeek === 3}}">二</text>
+                     <text wx:elif="{{item.dayOfWeek === 4}}">三</text>
+                     <text wx:elif="{{item.dayOfWeek === 5}}">四</text>
+                     <text wx:elif="{{item.dayOfWeek === 6}}">五</text>
+                     <text wx:else="{{item.dayOfWeek === 7}}">六</text></view>
+          <view>{{item.date}}</view>
+        </view>
+      </scroll-view> 
+        <view class="time-surplus">
+          <view class="font-14 {{selectIndex == cell.id?'bg-active fff':'bg-fff'}}"  
+                wx:for="{{equipTimePlanList[num].child}}"    wx:for-index="index" wx:for-item="cell" 
+                wx:key = 'index'
+                bindtap="selectTimeChange" 
+                data-id="{{cell.id}}">
+                {{cell.splitStartTime}}-{{cell.splitEndTime}} 余{{cell.surplus}}部位</view>
+          </view>      
+        </view>
+    <button bindtap="sureTime" class="sure-time bg-default color-fff">确定</button>
+</view>

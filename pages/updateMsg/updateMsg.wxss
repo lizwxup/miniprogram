@@ -1,0 +1,15 @@
+/* pages/updateMsg/updateMsg.wxss */
+.update-name{
+  height:80rpx;
+  width:90%;
+  margin:20px auto;
+  border-radius:5px;
+}
+.sure-btn{
+  width:85%;
+  height:80rpx;
+  line-height:80rpx;
+  border:none;
+  border-radius:40rpx;
+  margin-top:20px;
+}

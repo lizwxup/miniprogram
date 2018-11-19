@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/addOrder/addOrder",
+    "pages/myInfo/myInfo",
+    "pages/disgnos/disgnos",
+    "pages/orderTime/orderTime",
+    "pages/auth/auth",
+    "pages/editName/editName",
+    "pages/updateMsg/updateMsg",
+    "pages/reportList/reportList",
+    "pages/reportDetail/reportDetail",
+    "pages/distributeDetail/distributeDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#52c8ec",
+    "navigationBarTitleText": "医生预约端",
+    "navigationBarTextStyle": "#fff",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 60
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#ff9d3d",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index-active.png"
+      },
+      {
+        "text": "预约",
+        "pagePath": "pages/addOrder/addOrder",
+        "iconPath": "images/order.png",
+        "selectedIconPath": "images/order-active.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/myInfo/myInfo",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine-active.png"
+      }
+    ]
+  }
+}

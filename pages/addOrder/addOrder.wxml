@@ -1,0 +1,153 @@
+<view class="order-title font-14">
+  <!--总导航-->
+  <view class="order-all-top bg-fff" wx:if="{{stepIndex != '5'}}">
+    <view class="order-all font-14">
+      <view class="or-step font-14"  style="background:{{stepIndex >= 2? '#52c8ec' : '#bbb' }}">
+      <text style="color:{{stepIndex >= 2? '#52c8ec':'#ddd'}}">1</text>检查项目</view>
+      <view class="or-step font-14"  style="background:{{stepIndex >=3? '#de4ae3' : '#ccc' }}">
+      <text style="color:{{stepIndex >= 3? '#de4ae3':'#ddd'}}">2</text>影像中心</view>
+      <view class="or-step font-14" 
+        style="background:{{stepIndex >= 4? '#f7405e':'#ddd' }};border-radius:0 10rpx 10rpx 0">
+      <text style="color:{{stepIndex >= 4? '#f7405e':'#ddd' }}">3</text>确认预约</view>   
+    </view>  
+  </view>
+  <!--第yi步-->
+  <view class="se-step" wx:if="{{stepIndex === '2'}}">
+      <view class="bg-fff step-cont">
+          <view class="equip-cont">
+              <view>设备</view>
+              <view>部位</view>
+              <view>检查方法 </view>
+          </view>
+         <!-- <view class="border-sep"></view> -->
+          <view style="width:100%">
+            <view  wx:for="{{equipPartMethods}}"  wx:for-index="idx" wx:key="item" class="equip-cont">
+                <view>{{item.equip}}</view>
+                <view>{{item.part}}</view>
+                <view>{{item.method}}<text style="margin-left:10px;color:red;;font-12"  
+                  data-id="{{item.methodId}}" bindtap="deleMethod">删除</text></view>
+            </view>
+          </view>
+          <view class="add-btn  font-14 bg-active color-fff">
+            <view class="picker" bindtap='open'>新增项目</view>
+            <!--三级联动-->
+            <view wx:if="{{condition}}" class="citypicker">
+              <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" 
+                value="{{value}}" bindchange="bindChange" class="citybody">
+                <view class="cityheader">
+                  <view bindtap="open" class="city-cancel">取消</view>
+                  <view bindtap="open" class="city-true" bindtap='selectmethod'>确定</view>
+                </view>
+                <picker-view-column>
+                  <view wx:for="{{equips}}" wx:key="item" style="line-height: 50px;padding-left:10px;">
+                  {{item}}</view>
+                </picker-view-column>
+                <picker-view-column>
+                  <view wx:for="{{parts}}" wx:key="item" style="line-height: 50px;padding-left:10px;">
+                  {{item}}</view>
+                </picker-view-column>
+                <picker-view-column>
+                  <view wx:for="{{methods}}" wx:key="item" style="line-height: 50px;padding-left:10px;">
+                  {{item}}</view>
+                </picker-view-column>
+              </picker-view>
+          </view>
+          <!--结束-->
+          </view>
+      </view>
+      <view class="order-content  bg-fff" >
+          <label>主诉</label>
+          <view style="height:100px;">
+            <textarea wx:if="{{!show}}"  placeholder="请输入主诉"  bindblur="bindTextAreaBlur" 
+            value="{{mainSuit}}"></textarea>
+          </view>
+          <label>病史</label>
+          <view>
+            <textarea  wx:if="{{!show}}"  bindblur="bindTextmedicalHistoryBlur" 
+              placeholder="请输入病史"  value="{{medicalHistory}}"></textarea> 
+          </view>
+          <label>临床诊断</label>
+          <view>
+              <textarea wx:if="{{!show}}"  bindblur="bindTextdiagnosisBlur"placeholder="请输入临床诊断" 
+          value="{{diagnosis}}"></textarea>  
+          </view> 
+         </view>
+       <button class="next-btn bg-default color-fff" data-id = "3"  bindtap="secondNextStep">下一步 </button>
+        <view class="mask" wx:if="{{maskFlag}}" bindtap='showMask' 
+        catchtouchmove="handleOnSearchbarIndexTouchMove" ></view>
+  </view>
+  <!--第三步-->
+  <view class="bg-fff three-step" wx:if="{{stepIndex === '3'}}" >
+    <view wx:for="{{hospitalList}}" wx:key="item" wx:for-index="idx">
+        <view class="order-border"></view>
+         <view class="se-step-list p-r" bindtap="bindHospital"   data-num="{{item.surplusNum}}" 
+           data-id="{{item.id}}">
+              <view class="order-hostipal">{{item.name}}</view>
+              <view class="p-a order-can bg-active color-fff font-12" 
+               wx:if="{{item.surplusNum != 0}}">可预约</view>
+              <view class="p-a order-can bg-bbb color-fff font-12" 
+                wx:elif="{{item.surplusNum === 0}}">不可预约</view>
+              <view class="order-address font-12">   
+              <image src="../../images/dw@3x.png"></image>{{item.address}}
+              <text wx:if="{{selectHostipal === item.id}}" 
+              style="color:red;float:right">已预约</text></view></view>
+    </view>
+    <view class="order-border"></view>
+    <view class="step-btn" style="margin-left:2.5%;position:fixed;bottom:40px;">
+          <button class="step-btn-last bg-aaa color-fff"  data-id = "2" bindtap="thirdLastStep">上一步</button>
+          <button class="step-btn-next bg-default color-fff" data-id ="4" bindtap="secondNextStep">下一步</button>
+    </view> 
+     </view>
+     <!--第四歩-->
+     <view class="bg-fff four-step-all" wx:if="{{stepIndex === '4'}}" >
+        <view class="four-hostipal">
+          <view>预约医院：{{seleHospital}} </view>
+          <view>医院地址：{{seleAddress}}</view>
+        </view>
+        <view>
+        <view class="equip-cont">
+          <view>设备</view>
+          <view>部位</view>
+          <view>检查方法 </view>
+          <view>预约时间</view>
+          </view>
+          <view style="width:100%">
+            <view class="equip-cont"  wx:for="{{equipPartMethods}}"  wx:for-index="idx" wx:key="item" >
+                <view>{{item.equip}}</view>
+                <view>{{item.part}}</view>
+                <view>{{item.method}}</view>
+                <view style="line-height:20px;font-size:11px;">{{time}}</view>
+             </view>
+         </view>
+        </view>
+        <view class="order-detailContent">
+          <view>主诉</view>
+          <view class="font-weight">{{mainSuit}}</view>
+          <view>病史</view>
+          <view class="font-weight">{{medicalHistory}}</view>
+          <view>临床诊断</view>
+          <view class="font-weight bottom-dist">{{diagnosis}}</view>
+        </view>
+      <view class="step-btn" style="margin-left:2.5%;position:fixed;bottom:40px;">
+          <button class="step-btn-last bg-aaa color-fff"  data-id = "3"  bindtap="thirdLastStep">上一步 </button>
+          <button class="step-btn-next bg-default color-fff" bindtap="sureXin">确认 </button>
+      </view> 
+    </view>
+    <!--第五步-->
+    <view style="bg-fff" wx:if="{{stepIndex === '5'}}" >
+        <view class="bg-active color-fff order-succ">
+           <view>订单状态 ：<text class="font-16 font-weight">已预约成功</text></view>
+           <view>扫描下面二维码，查看当前预约检查</view>
+        </view>
+        <view class="ecode font-16 font-weight">检查预约码：{{orderNum}}</view>
+        <view class="order-border"></view> 
+        <!--<view><image src="../../images/ecode.jpg" style="margin-left:10%;width:80%;"></image></view> -->
+         <view bindtap="previewImage">
+            <canvas canvas-id="mycanvas" style="width: 686rpx;height:686rpx;margin:0 auto"/>
+          </view> 
+        <view class="ecode font-16 font-weight">请提醒用户在预约时间前30分钟抵达影像中心</view>
+        <button class="order-complete bg-active color-fff" bindtap='complete'>完成</button>
+    </view> 
+</view>
+   
+

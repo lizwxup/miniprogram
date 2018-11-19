@@ -1,0 +1,346 @@
+/* pages/disgnos/disgnos.wxss */
+/**index.wxss**/
+.mainChart-hosp,.mainCont,.flex-style,.mainChart,.check-event,.mainChart-detail{
+  color:#535353;
+}
+.canvas-box{position: fixed;bottom:120rpx;right: 10px}
+.swiper-tab {
+  width: 80%;
+  text-align: center;
+  line-height:25px;
+  background-color:white;
+  margin-left:10%;
+}
+.swiper-second{
+  border:1px solid #52c8ec;
+  border-left:0px; 
+  margin-top:2px;
+}
+.report-image{
+  margin-top:100px;
+  display: inline-block;
+  width:30%;
+  margin-left:35%;
+  height:110px;
+}
+.wechat-friend{
+  padding:0;
+  margin-top:-12px;
+}
+.swiper-third{
+  border:1px solid #52c8ec;
+  border-left:0px;
+  border-radius:0px 5px 5px 0px;
+}
+.swiper-first{
+  border:1px solid #52c8ec;
+  border-radius:5px 0px 0px 5px;
+}
+.user-title{
+  height:38px;
+  line-height:38px;
+  padding-top:5px;
+  border-bottom:1px solid #eee;
+  background:#fff;
+}
+.swiper-tab-list {
+  display: inline-block;
+  width: 30%;
+  color:#52c8ec;
+}
+page{
+  background:#f5f5f5;
+  font-size:16px;
+}
+.checkdesc-method{
+  font-size:14px;line-height:30px;
+}
+.on {
+  color: #fff;
+  background:#52c8ec;
+}
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.swiper-box view {
+  text-align: center;
+}
+.patient_main{
+  width:96%;
+  margin-left:2%;
+  margin-top:5px;
+  border-radius:5px;
+  background:#fff;
+  overflow:auto;
+  margin-bottom:5px;
+}
+.patient_main::-webkit-scrollbar {
+    display: none;
+}
+.patient_name{
+  width:50%;
+}
+.patient_sex{
+  width:25%;
+}
+.weui-cells__title{
+  padding:10px;
+}
+.patient_phone{
+  margin-top:10px;
+  margin-bottom:10px;
+  display: flex;
+  justify-content:space-between;
+}
+.patient_size{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+}
+.flex-style{
+  color:#000;
+}
+#panel text{
+  /* line-height: 6vh; */
+}
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height:45px;
+}
+.flex-bot{
+  border-bottom: 0.5rpx solid #e4e4e4;
+}
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+button,.button-hover{
+  background:#fff;
+  padding:0 !important;
+}
+.flex-cell{
+  flex: 1;
+}
+.flex-border{
+  border-right:1px solid #e4e4e4;
+  height:15px;
+}
+.mainChart{
+  font-size:16px;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+.check-event{
+  font-size:14px;
+  margin-left:10px;
+  margin-top:10px;
+  margin-bottom:70px;
+}
+.disgnos_main{
+  margin:0 auto;
+}
+.report_host{
+  font-weight: bold;
+  text-align: center;
+  font-size:18px;
+  line-height:30px;
+}
+.ct-report{
+  text-align: center;
+  font-size:15px;
+  line-height:30px;
+}
+.checkdesc-main{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  font-size:14px;
+  line-height:30px;
+  justify-content:space-between;
+}
+.checkdesc-border{
+  border-bottom:2px solid #e4e4e4;
+}
+.check-title{
+  font-weight:bold;
+  margin-bottom:5px;
+  margin-top:5px;
+}
+.check-cont{
+  margin-left:10px;
+  font-size:14px;
+}
+.check-bottom{
+  margin-top:60px;
+  margin-bottom:60px;
+}
+.mainCont{
+  font-size:15px;
+  padding-bottom:10px;
+}
+.image-nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  background:#fff;
+  height:50px;
+  width:100%;
+  display: flex;
+  vertical-align: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.addressHeight{
+  line-height:40px;
+}
+.address-height{
+  margin-bottom:60px;
+}
+button:after{
+  border:0px solid #fff;
+}
+.share-type{
+  display: flex;
+  vertical-align: center;
+  flex-direction: row;
+  width:120%;
+  margin-left:-8%;
+}
+.image-share{
+  background:#52c8ec;
+  color:#fff;
+  height:30px;
+  line-height:30px;
+  border-radius:15px;
+  font-size:14px;
+  text-align:center;
+  margin-right:10px;
+  width:33%;
+}
+.image-nav-pay{
+  background:orange;
+}
+button{
+  margin-left:0;
+}
+.not-report{
+  text-align:center;
+  font-weight: bold;
+  font-size:15px;
+  color:#c9c9c9;
+  margin-top:5px;
+}
+.dialog_share{
+  position:fixed;
+  top:35%;
+  left:0;
+  background:#fff;
+  width:80%;
+  font-size:15px;
+  padding:5%;
+  border-radius: 10px;
+  margin-left:5%;
+  z-index:999;
+  height:260px;
+}
+.shareType{
+  display: flex;
+  font-size:14px;
+  width:100%; 
+}
+.share-list button{
+  font-size:14px;
+}
+.share-list{
+  width:33%;
+  border:1px solid #fff;
+  text-align:center;
+}
+.wx-checkbox-input{
+  display: none;
+}
+.ws-checkbox {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-image:url('https://cloud.ezhenduan.com/2.png');
+  background-size: 100%;
+  margin-right:3px;
+}
+.ws-checkbox[checked] {
+  background-image:url('https://cloud.ezhenduan.com/1.png');
+  background-size: 100%;
+  width:18px;
+  height:18px;
+  margin-right:3px;
+}
+.dialog_bg{
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.3);
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:99;
+}
+label{
+  display: inline-block;
+  padding-left:10px;
+  margin-bottom:15px;
+  width:40%;
+}
+.share_bottom{
+  margin-bottom:15px;
+}
+/* .ca_image{
+  width:100px;
+  height:60px;
+  position:absolute;
+  top:0px;
+  right:20px;
+} */
+checkbox{
+    border:none;
+}
+/*barcode  */
+.qr-code{
+  position:absolute;
+  right: 0;
+  top: 20%;
+  bottom: 0;
+  margin:auto;
+  left: 10000rpx
+} 
+.image-nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  background:#fff;
+  height:50px;
+  width:100%;
+  display: flex;
+  vertical-align: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-left:5px;
+}
+.image-navcs{
+  width:40%;
+  background:#52c8ec;
+  color:#fff;
+  height:25px;
+  line-height:25px;
+  border-radius:15px;
+  font-size:14px;
+  text-align:center;
+  margin-right:10px;
+}

@@ -1,0 +1,5 @@
+<!--pages/updateMsg/updateMsg.wxml-->
+<view>
+    <input auto-focus class="update-name bg-fff" value="{{name}}" bindblur='editName' ></input>
+    <button class="sure-btn bg-default color-fff" bindtap="sureName">确定</button>
+</view>

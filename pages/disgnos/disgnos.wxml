@@ -1,0 +1,72 @@
+<view>
+  <view> 
+  <!--用户的姓名  -->
+  <view class="patient_main" >
+  <!-- 预约单 -->
+     <view class="weui-cells__title" hidden="{{!isShow}}" >
+         <view class="font-15 patient_size">     
+            <text class="patient_name d-lb">姓名：{{orderData.name}}</text> 
+            <text class="patient_sex d-lb"  wx:if="{{orderData.gender==1}}">性别：男</text>
+            <text class="patient_sex d-lb" wx:elif="{{orderData.gender==2}}"> 性别：女 </text>
+            <text>年龄：{{orderData.age}}</text>
+          </view>
+          <view class="patient_phone font-15 " style="position:relative;">
+            <text style="line-height:80rpx;">预约号：{{orderData.id}}</text>
+            <image src="../../images/qrcode.png" style="width:80rpx;height:80rpx" bindtap="previewImg"></image>
+          </view> 
+          <view class="qr-code"  bindtap="previewImg" style='width:0px;height:0px;overflow:hidden;'>
+            <canvas canvas-id="qrcode"    style="width: 686rpx;height:686rpx;margin:0 auto" />
+          </view> 
+          <!--table 标签实现   wx:if="{{!qrcode}}"-->
+          <view id="panel" class="flex-column bg-fff">
+            <view class="flex-cell flex-row flex-bot flex-style font-15">
+              <text class="flex-cell flex-row flex-border">设备</text>
+              <text class="flex-cell flex-row flex-border">部位</text>
+              <text class="flex-cell flex-row">检查方法</text>
+            </view>
+            <view class="flex-row flex-cell flex-bot" wx:for="{{orderData.mpiList}}"
+              wx:for-index="idx" wx:for-item="itemName" wx:key="item">
+              <text class="flex-cell flex-row flex-border" >{{itemName.modalityName}}</text>
+              <text class="flex-cell flex-row flex-border">{{itemName.posiName}}</text>
+              <text class="flex-cell flex-row">{{itemName.itemName}}</text>
+            </view>
+          </view>
+          <!--主诉-->
+          <view class="flex-bot">
+              <view class="mainChart">主诉</view>
+              <view class="mainCont"  wx:if="{{orderData.chiefComplaint==null}}">无</view>
+          <view class="mainCont"  wx:else="{{orderData.chiefComplaint==null}}">{{orderData.chiefComplaint}}</view>
+          </view> 
+          <view class="flex-bot">
+              <view class="mainChart">病史</view>
+              <view class="mainCont" wx:if="{{orderData.medicalHistory==null}}">无</view>
+              <view class="mainCont" wx:else>{{orderData.medicalHistory}}</view>
+          </view> 
+          <view>
+              <view class="mainChart">临床诊断</view>
+              <view class="mainCont" wx:if="{{orderData.clinicalDiagnosis==''}}">无</view>
+              <view class="mainCont" wx:else>{{orderData.clinicalDiagnosis}}</view>
+          </view> 
+          <view style="margin-top:20px;" class="flex-bot addressHeight">
+              <text class="mainChart-detail font-16" >预约医院：</text>
+              <text class="mainChart-hosp">{{orderData.centerName}}</text>
+          </view> 
+          <view class="flex-bot addressHeight">
+              <text class="mainChart-detail font-16">预约时间：</text>
+              <text class="mainChart-hosp">{{orderData.createTime}}</text>
+          </view> 
+          <view class="addressHeight address-height" bindtap='goToMap'>
+              <view class="mainChart-hosp font-14" style="color:#bebebe;">
+              <image src="../../images/dw@3x.png" style="margin-right:5px;"
+                     class='widthHieghtthree ver-middle'></image>{{orderData.address}}</view>
+          </view> 
+          <view class="mask" wx:if="{{showQrcode}}" bindtap="hideQrcode"></view>
+     </view>
+  </view> 
+  </view> 
+  <view class="image-nav">  
+    <button class="image-nav-guide image-navcs" bindtap="goToReport">报告</button>
+  </view>  
+</view>
+    
+

@@ -1,0 +1,15 @@
+/* pages/auth/auth.wxss */
+.login{
+  text-align:center;
+  line-height:70px;
+  margin-top:30px;
+}
+.auth-btn{
+  width:80%;
+  margin:0 auto;
+  height:40px;
+  line-height:40px;
+  border:none;
+  border-radius:10px;
+  margin-top:10px;
+}

@@ -1,0 +1,239 @@
+/* pages/distributeDetail/distributeDetail.wxss */
+/* pages/reportList/reportList.wxss */
+#qrcanvas{
+  width:100px;
+  height:100px;
+  background:#fac900;
+
+}
+page{
+  background:#ececec;
+}
+.checkList-status{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.index-all{
+  overflow: hidden; 
+}
+.list-detail{
+  line-height:45px;
+}
+.list-detail-time{
+  margin-left:100px;
+  line-height:57px;
+}
+.lead-close{
+  width:2px;
+  height:60px;
+  background:#ccc;
+  margin-left:80%;
+}
+.close{
+  position:absolute;
+  top:-65px;
+  margin-left:75%;  
+}
+.order-state{
+  position:absolute;
+  top:15px;
+  left:1.5%;
+  width:100px;
+  height:40px;
+}
+.order-cancel{
+  position:absolute;
+  right:5px;
+  top:5px;
+  /* border:1px solid #fff; */
+  width:25px;
+  height:25px;
+  border-radius:50%;
+  text-align:center;
+  line-height:25px;
+}
+.order-text{
+  position:absolute;
+  top:15px;
+  left:11%;
+  line-height:30px;
+  font-size:12px;
+}
+.checkList-time{
+  font-size:10px;
+  border-right:1px solid #000;
+  margin-right:10px;
+  height:70px;
+  width:25px;
+}
+.checkList-host{
+  border-bottom:1px solid #000;
+  width:75%;
+  margin-top:10px;
+}
+.checkList-host view{
+  line-height:25px;
+}
+.hos-center{
+   margin-bottom:5px;
+   margin-left:10px;
+   font-size:14px;
+}
+.check-cont{
+  margin-left:10px;
+  font-weight:bold;
+  font-size:16px;
+}
+.radius-to{
+  width:15px;
+  height:15px;
+  background:#d8d8d8;
+  border-radius:50%;
+  display: inline-block;
+}
+.check_status{
+  font-size:12px;
+  text-align: center;
+  line-height:20px;
+  -webkit-transform:rotate(50deg);
+  transform:rotate(50deg);
+  -moz-transform:rotate(50deg); 
+  border-bottom: 25px solid pink;
+  border-left: 22px solid transparent;
+  border-right: 26px solid transparent; 
+  height: 0; 
+  width: 46px;
+}
+.check-date{
+  font-size:26rpx;
+}
+.order-main{
+  width:70%;
+  margin:0 auto;
+  border-radius:10px;
+  z-index:99999;
+  position:absolute;
+  left:15%;
+}
+.order{
+  width:100%;
+  background-image:url("https://cloud.ezhenduan.com/3.png");
+  background-size: 100% 100%;
+  height:115px;
+  border-radius:10px 10px 0 0;
+} 
+.container-avater{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+}
+.container{
+  display: flex;
+  vertical-align: center;
+}
+.check_list-cont{
+  font-size:15px;
+  margin-left:20px;
+}
+.group-list{
+  margin-top:15px;
+  margin-left:-50px;
+  font-size:15px;
+}
+.t-a{
+  text-align:center;
+  padding-top:10px;
+}
+button::after{
+  border:0px solid #fff;
+}
+.order-accept{
+  text-align:center;
+  width:90%;
+  margin-top:20px;
+  line-height:35px;
+  font-size:14px;
+  background:linear-gradient(to right,#fac900, #ffa800);
+}
+.order-main-cont{
+  margin-left:20px;
+  margin-top:20px;
+  color:#000;
+}
+.dialog-bg{
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.4);
+  position:absolute;
+  bottom:0;
+  overflow:hidden;
+  left:0;
+}
+button{
+  background:#fff;
+}
+.button-hover{
+  background:#fff;
+  color:#000;
+}
+.right-image{
+  position:absolute;
+  top:-11px;
+  right:10%;
+  width:45px;
+  height:45px;
+}
+.not-msg{
+  text-align:center;
+  font-weight: bold;
+  font-size:15px;
+  color:#c9c9c9;
+  margin-top:5px;
+}
+.handle-image{
+  margin-top:100px;
+  display: inline-block;
+  width:25%;
+  margin-left:35.5%;
+  height:110px;
+}
+
+/*新的样式*/
+.auth{
+  position:absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  margin:auto;
+  width:80%;
+  height:100px;
+  border-radius:5px;
+  z-index:99;
+}
+.auth view{
+  text-align:center;
+  line-height:40px;
+}
+.auth-btn{
+  width:80%;
+  margin:0 auto;
+  height:40px;
+  line-height:40px;
+  border-radius:10px;
+  margin-top:10px;
+}
+.order-list-style{
+  margin-left:1%;
+  border-bottom:1px solid #fff;
+  padding-bottom:10px;
+  margin-top:5px;
+  background:#fff;
+  border-radius:10px;
+  padding-left:10px;
+  padding-top:10px;
+  width:95%;
+
+}

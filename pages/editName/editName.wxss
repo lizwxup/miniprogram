@@ -1,0 +1,16 @@
+/* pages/editName/editName.wxss */
+.con-list{
+  margin-top:10px;
+}
+.cont-nickname{
+  display: flex;
+  justify-content: space-between;
+  height:50px;
+  line-height:50px;
+  border-bottom:1px solid #ccc;
+  padding-left:10px;
+  padding-right:5px;
+}
+.cont-nickname image{
+  margin-left:10px;
+}

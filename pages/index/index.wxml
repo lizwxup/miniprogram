@@ -1,0 +1,80 @@
+<!--index.wxml-->
+  <view class="searchCon bg-fff font-14" >
+    <view bindtap="nameShow" data-id="name">
+      姓名 <image src="../../images/jiantou.png" style="width:20px;height:20px;vertical-align:middle"></image>
+    </view>   
+    <view bindtap='nameShow' data-id="time">
+      时间 <image src="../../images/jiantou.png" style="width:20px;height:20px;vertical-align:middle"></image>
+    </view>
+  </view>
+  <view class="search-name bg-fff" wx:if="{{nameFlag}}">
+    <input placeholder='请输入姓名' class="bg-bbb font-14" value="{{sname}}"  bindblur="searchName"></input>
+    <button class="bg-default fff font-14" bindtap='sureNameSear'>确定</button>
+  </view>
+   <view class="search-time bg-fff" style="top:40px" wx:if="{{timeFlag}}">
+      <picker mode="date" class="font-14"   
+        end="" bindchange="bindstartDateChange">
+      <view class="picker">
+         <view class="bg-bbb font-14" >
+         <text wx:if="{{startData === ''}}" class="bbb">开始时间</text>{{startData}}</view>
+      </view>
+      </picker><view class="font-14">至</view>
+      <picker mode="date"  class="font-14"  start="" 
+          end="" bindchange="bindendDateChange">
+        <view class="picker">
+          <view class="bg-bbb font-14">
+         <text wx:if="{{endData === ''}}" class="bbb">结束时间</text>{{endData}}</view> 
+        </view>
+      </picker> 
+    <button class="bg-default  stime fff font-14" bindtap="sureNameSear">确定</button>
+  </view>
+ <!--没找到 实例 -->
+ <view class="index-all">
+    <view wx:if="{{patientArray.length==0}}" catchtouchmove="handleOnSearchbarIndexTouchMove">
+        <image src="../../images/qx02@3x.png" class="handle-image"></image>
+        <view class="not-msg">抱歉！未找到相关预约单</view>
+     </view>
+  <loading hidden="{{loading}}">加载中...</loading>
+  <!--如果有数据 或者绑定手机号的情况下 可以进行操作   -->
+  <view style="height:50px;"></view>
+    <block wx:for="{{patientArray}}"  wx:for-index="idx" wx:key="item">
+      <navigator class="test-item" url="../disgnos/disgnos?oid={{item.id}}">
+        <view  style="position:relative;margin-top:20px;">
+            <image src="../../images/011@3x.png" style="width:90%;height:180px;margin-left:5%;"></image>
+            <!--定位图片  -->
+              <image src="../../images/002@3x.png"  class="right-image"></image>
+            <view>
+            <view  wx:if="{{item.reschedulingTime!=''}}">
+                <image src="../../images/yellow.png" class="order-state"></image>
+                <view style="left:12%;" class='fff order-text'>已改签</view>
+            </view>
+            <view  wx:elif="{{item.registrationTime!=''}}">
+                <image src="../../images/blue.png"  class="order-state" ></image>
+                <view style="left:12%;" class='fff order-text'>已签到</view>
+            </view>      
+            <view  wx:elif="{{item.cancelTime!=''}}">
+                <image src="../../images/gray.png"  class="order-state" ></image>
+                <view style="left:11%;" class='fff order-text'>已取消</view>
+            </view>   
+            <view  wx:elif="{{item.createTime!=''&&item.cancelTime==='' && item.registrationTime===''&&item. reschedulingTime===''}}">
+                <image src="../../images/yellow.png"  class="order-state" ></image>
+                <view style="left:12%;" class='fff order-text'>已预约</view>
+            </view>  
+            <view  wx:else>
+              <image src="../../images/gray.png"  class="order-state" ></image>
+              <view style="left:11%;" class='fff order-text'>未知</view>
+            </view>     
+            </view>
+            <view style='position:absolute;top:0px;left:15%' class="font-14 list-detail">
+              <view class='list-detail-time'>{{item.subscribeDate}}</view>
+              <view class="font-bold">{{item.name}}: 
+                <text wx:for="{{item.mpiList}}" wx:key="item">({{item.modalityName}}  [{{item.posiName}}]) </text></view>
+              <view class="font-bold">{{item.centerName}}</view>
+            </view>
+        </view>
+      </navigator>
+    </block>
+  <view class="mask" wx:if="{{nameFlag || timeFlag}}" bindtap='showMask' 
+  catchtouchmove="handleOnSearchbarIndexTouchMove"    style="height:{{height+'px'}}"></view>
+  </view>
+ 

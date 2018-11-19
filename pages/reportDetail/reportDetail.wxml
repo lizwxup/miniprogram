@@ -1,0 +1,76 @@
+
+<view class="bg-fff report-con font-16">
+    <!--信息title-->
+      <view class="report-title t-a">
+        <view>
+           {{reportDetail.centerName}}
+        </view>
+        <view>
+            检查报告单
+        </view>  
+      </view>
+      <view class="report-detail">
+        <text>预约号码：{{reportDetail.id}}</text>
+      </view>
+       <view class="report-line">
+         <text>影像号码：{{reportDetail.accNo}}</text>
+       </view>
+       <view class="report-detail ">
+        <text>姓名：{{reportDetail.patientName}}</text>
+        <text>性别：{{reportDetail.patientGender}}</text>
+      </view>
+      <view class="report-detail report-line">
+        <text>年龄：{{reportDetail.patientAge}}</text>
+        <text>检查号码：{{reportDetail.studyId}}</text>
+      </view>
+       <view class="report-detail">
+        <text>检查设备：{{checkEquip}}</text>
+      </view>
+      <view>
+         检查项目： 
+      <text wx:for="{{reportDetail.studyList}}" 
+       wx:for-index="{{idx}}" wx:key ="{{item}}" style="margin-left:10px;"> {{item.posiId}} ({{item.itemId}})</text> 
+      </view>
+      <view class="report-title">
+          影像所见
+      </view>
+      <view>
+          {{reportDetail.imageFind}}
+      </view>
+      <view class="report-title">
+          诊断结果
+      </view>
+      <view>
+          {{reportDetail.diagResult}}
+      </view>
+      <view class="report-title">
+          备注
+      </view>
+      <view>
+          {{reportDetail.remark}}
+      </view>
+      <view class="font-14 report-add report-add-margin">
+        <text>中心地址：{{reportDetail.province}}{{reportDetail.city}}{{reportDetail.county}}</text>
+      </view>
+      <view class="font-14 report-add">
+        <text>中心电话：{{reportDetail.telphone}}</text>
+      </view>  
+      <view class="report-detail font-14 ">
+        <text>报告医师: {{reportDetail.writeDoctorName}}</text>
+      </view>
+      <view class="report-detail font-14 ">
+         <text>报告日期：{{writeTime}}</text>
+      </view>
+      <view class="report-detail font-14">
+         <text>审核医师：{{reportDetail.auditDoctorName}}</text>
+      </view>
+      <view  class="report-detail font-14">
+        <text>审核日期：{{audiTime}}</text>
+      </view>
+       <!-- <view  class="report-detail font-12">
+        <view>附注：本报告仅供临床医生参考,不作证明之用,未经医生亲笔签名无效</view>
+      </view> -->
+      <!--<view class="font-14 report-add-list">
+        <text>报告免责条款</text>
+      </view> -->
+</view>

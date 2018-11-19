@@ -1,0 +1,46 @@
+<view>
+  <view>
+  <view class="container" bindtap="editName">
+    <view class="container-user">
+        <view class="userinfo-msg">
+        <open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
+        </view>
+        <view class="msg">
+            <view class="userinfo-nickname font-14">{{nickName}}</view>
+            <view class="userinfo-detail">
+                <text class="font-14">{{hospital}}</text>
+            </view> 
+        </view>
+      </view>  
+      <view class="edit-msg">
+          <view><image src="../../images/right.png" style="width:10px;height:15px;"></image></view>
+      </view>  
+  </view>
+  <view class="order-all font-16">
+        <view class="order-each">
+            <view class="font-weight">今日开单量</view>
+            <view wx:for="{{rsToday}}" wx:key="item"  wx:for-index="idx">
+            {{item.modalityName}} <text>{{item.num}}</text></view>
+        </view>
+        <view class="order-each">
+            <view class="font-weight">历史开单量</view>
+              <view wx:for="{{rsHistory}}" wx:key="item"  wx:for-index="idx">
+            {{item.modalityName}} <text>{{item.num}}</text></view>
+        </view>
+    </view> 
+      <view class="order-all font-16">
+        <view class="order-each">
+            <view class="font-weight">本月开单量</view>
+              <view wx:for="{{rsMonth}}" wx:key="item"  wx:for-index="idx">
+            {{item.modalityName}} <text>{{item.num}}</text></view>
+        </view>
+        <view class="order-each">
+            <view class="font-weight">本月登记量</view>
+            <view wx:for="{{rsrMonth}}" wx:key="item"  wx:for-index="idx">
+            {{item.modalityName}} <text>{{item.num}}</text></view>
+        </view>
+    </view> 
+  </view>
+  <!-- <button class="distributeDetil bg-default color-fff font-14" bindtap='goToDetail'>清分详单</button> -->
+</view> 
+  

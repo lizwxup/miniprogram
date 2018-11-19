@@ -1,0 +1,15 @@
+<view class="index-all"> 
+  <view wx:if="{{patientArray.length==0 && checkOrder==0}}" catchtouchmove="handleOnSearchbarIndexTouchMove">
+      <image src="../../images/qx02@3x.png" class="handle-image"></image>
+      <view class="not-msg">抱歉！还没有清分列表单</view>
+    </view>
+  <block wx:for="{{patientArray}}"  wx:for-index="idx" wx:key="item">
+    <view class="font-14 order-list-style">
+      <view>预约时间：2018-4-6</view>
+      <view>设备：CT</view>
+      <view>预约号码：1W28098jhgyjjm</view>
+    </view>
+  </block>
+</view>
+ 
+

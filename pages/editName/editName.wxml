@@ -1,0 +1,17 @@
+<!--pages/editName/editName.wxml-->
+<view class="con-list bg-fff">
+   <view class="cont-nickname font-14" bindtap="editName">
+    <view>姓名</view>
+    <view class="cont-nickname">
+      <view>{{name}}</view>
+      <view><image src="../../images/right.png" style="width:10rpx;height:20rpx;"></image></view>
+    </view>
+   </view>
+    <view class="cont-nickname font-14" bindtap="editHospital">
+      <view>医院</view>
+      <view  class="cont-nickname">
+        <view >{{hospital}}</view>
+        <view><image src="../../images/right.png" style="width:10rpx;height:20rpx;"></image></view>
+      </view>
+    </view>
+</view>

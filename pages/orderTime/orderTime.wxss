@@ -1,0 +1,47 @@
+/* pages/orderTime/orderTime.wxss */
+.time-title{
+  text-align:center;
+  line-height:80rpx;
+  height:80rpx;
+}
+.time-date{
+  width:100%;
+  overflow:hidden;
+  white-space: nowrap;
+}
+.time-date view.time-dec{
+  display:inline-block;
+  border:1px solid #ccc;
+  width:200rpx;
+  text-align:center;
+}
+/*测试数据*/
+.time-dec view{
+  line-height:50rpx;
+}
+.time-surplus{
+  /* display:flex;
+  justify-content: space-around; */
+  margin-top:40rpx;
+}
+.time-surplus view{
+  padding:10rpx;
+  border-radius:20rpx;
+  width:40%;
+  float:left;
+  margin-left:5%;
+  margin-bottom:10px;
+  text-align:center;
+}
+.sure-time{
+  width:85%;
+  height:80rpx;
+  line-height:80rpx;
+  border:none;
+  border-radius:40rpx;
+  margin-top:140rpx;
+}
+.cur{ 
+ border-bottom:1px solid red !important;
+ 
+}
